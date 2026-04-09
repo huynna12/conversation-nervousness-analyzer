@@ -1,7 +1,10 @@
 import anthropic, json
-from test_data import nervous_transcript, confident_transcript, ambiguous_transcript
-client = anthropic.Anthropic()
+import streamlit as st
+import os
 
+api_key = st.secrets.get("ANTHROPIC_API_KEY") if hasattr(st, "secrets") else os.getenv("ANTHROPIC_API_KEY")
+
+client = anthropic.Anthropic(api_key=api_key)
 msg_content = """
 You are a conversation analyst.
 
@@ -37,6 +40,7 @@ IMPORTANT:
 
 Return JSON only (no markdown):
 {
+  "context": "job interview",
   "filler": {"score": 0.5, "count": 8, "words": ["um", "like"]},
   "deflection": {"score": 0.1, "count": 0, "words": []},
   "repeated_words": {"score": 0.3, "count": 3, "words": ["connect"]}

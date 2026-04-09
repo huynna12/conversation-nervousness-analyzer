@@ -10,6 +10,7 @@ if st.button("Analyze"):
         st.warning("Please paste a transcript first.")
     else:
         result = analyzer_transcript(transcript)
+        st.caption("Context detected: " + result["context"])
         score, verdict = overall_score(result)
         st.header("Nervousness chance: " + str(int(score * 100)) + "%")
         st.header("Proof: ")
