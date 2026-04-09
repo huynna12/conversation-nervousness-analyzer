@@ -2,7 +2,7 @@
 
 An AI agent that analyzes interview transcripts for nervousness signals using the Claude API. It detects filler words, deflection, and word repetition to produce a nervousness score with supporting evidence.
 
-## Demo link: 
+## Demo link: https://conversation-nervousness-analyzer-xtcp6vxsxu9zprife8pwnd.streamlit.app/
 
 ## How It Works
 
