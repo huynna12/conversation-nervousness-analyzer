@@ -3,7 +3,7 @@ from analyzer import analyzer_transcript, overall_score
 
 st.title("Conversation Nervousness Analyzer")
 
-transcript = st.text_area("Input interview transcript to analyze")
+transcript = st.text_area("Input interview transcript to analyze", height = 400)
 
 if st.button("Analyze"):
     if transcript == "":
